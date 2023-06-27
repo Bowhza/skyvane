@@ -39,7 +39,7 @@ async function fetchData(APIKey, Location)
         //Forecast
         const forecast = document.querySelector("#forecast");
 
-        let data = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${APIKey}&q=${Location}&days=7&aqi=no&alerts=no`, {
+        let data = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${APIKey}&q=${Location}&days=7&aqi=no&alerts=no`, {
             mode: "cors"
         });
         let result = await data.json();
@@ -99,7 +99,7 @@ async function fetchData(APIKey, Location)
 
 async function search(APIKey, Location){
     try{
-        let data = await fetch(`http://api.weatherapi.com/v1/search.json?key=${APIKey}&q=${Location}`, {
+        let data = await fetch(`https://api.weatherapi.com/v1/search.json?key=${APIKey}&q=${Location}`, {
             mode: "cors"
         });
         let JSON = await data.json();

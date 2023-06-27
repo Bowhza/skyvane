@@ -1,8 +1,33 @@
 import createCard from "./modules/forecast";
 
 const APIKey = "a68f15d2fde0485d82b215333232506";
+
+//Header Elements
 const searchBar = document.querySelector("#searchbar");
 const searchBtn = document.querySelector("#search-btn");
+
+//Main Card Elements
+const locationName = document.querySelector("#location-name");
+const countryName = document.querySelector("#country-name");
+const currentTemp = document.querySelector("#current-temp");
+const condition = document.querySelector("#condition-text");
+const conditionIcon = document.querySelector("#current-icon");
+const currentTime = document.querySelector("#current-time");
+
+//Side Card Elements
+const feelsLike = document.querySelector("#feels-like");
+const sunrise = document.querySelector("#sunrise");
+const sunset = document.querySelector("#sunset");
+const humidity = document.querySelector("#humidity");
+const uvIndex = document.querySelector("#uv-index");
+const uvIndexIcon = document.querySelector("#uv-index-icon");
+const windDir = document.querySelector("#wind-dir");
+const windSpeed = document.querySelector("#wind-speed");
+const pressure = document.querySelector("#pressure");
+const precipitation = document.querySelector("#precipitation");
+
+//Forecast Container
+const forecast = document.querySelector("#forecast");
 
 (()=>{
     fetchData(APIKey, "Edmonton");
@@ -16,36 +41,13 @@ const searchBtn = document.querySelector("#search-btn");
 async function fetchData(APIKey, Location)
 {
     try{
-        //Main Card Elements
-        const locationName = document.querySelector("#location-name");
-        const countryName = document.querySelector("#country-name");
-        const currentTemp = document.querySelector("#current-temp");
-        const condition = document.querySelector("#condition-text");
-        const conditionIcon = document.querySelector("#current-icon");
-        const currentTime = document.querySelector("#current-time");
-
-        //Side Card Elements
-        const feelsLike = document.querySelector("#feels-like");
-        const sunrise = document.querySelector("#sunrise");
-        const sunset = document.querySelector("#sunset");
-        const humidity = document.querySelector("#humidity");
-        const uvIndex = document.querySelector("#uv-index");
-        const uvIndexIcon = document.querySelector("#uv-index-icon");
-        const windDir = document.querySelector("#wind-dir");
-        const windSpeed = document.querySelector("#wind-speed");
-        const pressure = document.querySelector("#pressure");
-        const precipitation = document.querySelector("#precipitation");
-
-        //Forecast
-        const forecast = document.querySelector("#forecast");
-
+        //Attempts to fetch the forecast data
         let data = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${APIKey}&q=${Location}&days=7&aqi=no&alerts=no`, {
             mode: "cors"
         });
         let result = await data.json();
         let icon = await fetchIcon(result.current.condition.code);
         
-        console.log(result);
 
         //Checks if its daytime or nightime and sets the icon accordingly.
         if(result.current.is_day == 1){

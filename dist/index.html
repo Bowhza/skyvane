@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Skyvane</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+        <script src="main.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body id="body-tag">
+        <header class="flex-col">
+            <h1 id="title">Skyvane</h1>
+            <form class="flex search-form">
+                <label for="searchbar">Search:</label>
+                <input type="text" name="searchbar" id="searchbar">
+                <ul id="search-results" class="flex-col">
+                </ul>
+                <button id="search-btn"><img src="icons/search.svg" alt="Search"></button>
+            </form>
+        </header>
+        <main>
+            <section class="top-section flex">
+                <section class="flex-col main-card">
+                    <h2 id="location-name"></h2>
+                    <h3 id="country-name"></h3>
+                    <div class="flex-col current-stats">
+                        <div class="top-sec flex">
+                            <img id="current-icon" src="">
+                            <h2 id="current-temp">
+                                <h2 id="condition-text"></h2>
+                            </h2>
+                        </div>
+                        <div>
+                            <h2 id="current-time"></h2>
+                        </div>
+                    </div>
+                </section>
+                <section id="extra-info">
+                    <h2 id="details-title">Details</h2>
+                    <div>
+                        <div class="flex details-div">
+                            <img src="./icons/thermometer-celsius.svg" class="details-icon">
+                            <p id="feels-like"></p>
+                        </div>
+                        <div class="flex details-div">
+                            <img src="./icons/sunrise.svg" class="details-icon">
+                            <p id="sunrise"></p>
+                        </div>
+                        <div class="flex details-div">
+                            <img src="./icons/sunset.svg" class="details-icon">
+                            <p id="sunset"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex details-div">
+                            <img src="./icons/windsock.svg" class="details-icon">
+                            <p id="wind-dir"></p>
+                        </div>
+                        <div class="flex details-div">
+                            <img src="./icons/wind.svg" class="details-icon">
+                            <p id="wind-speed"></p>
+                        </div>
+                        <div class="flex details-div">
+                            <img src="./icons/uv-index.svg" class="details-icon" id="uv-index-icon">
+                            <p id="uv-index"></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex details-div">
+                            <img src="./icons/raindrop.svg" class="details-icon">
+                            <p id="precipitation"></p>
+                        </div>
+                        <div class="flex details-div">
+                            <img src="./icons/humidity.svg" class="details-icon">
+                            <p id="humidity"></p>
+                        </div>
+                        <div class="flex details-div">
+                            <img src="./icons/barometer.svg" class="details-icon">
+                            <p id="pressure"></p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section id="forecast-section" class="flex-col">
+                <h2 id="forecast-title">Forecast</h2>
+                <div id="forecast">
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Created by: <a href="https://github.com/Bowhza" title="GitHub Page" target="_blank">Bowhza</a></p>
+            <p>Powered by <a href="https://www.weatherapi.com/" title="Free Weather API" target="_blank">WeatherAPI.com</a></p>
+        </footer>
+        <script defer>
+            VANTA.CLOUDS({
+                el: "body",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                speed: 0.5
+            })
+        </script>
+    </body>
+</html>

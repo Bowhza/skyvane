@@ -15,6 +15,7 @@ h1, h2, h3 {
 
 header{
     align-items: center;
+    padding: 2em 0em;
     z-index: 2;
 }
 
@@ -104,35 +105,45 @@ img{
 /*Top Section Styles*/
 .top-section{
     flex-wrap: wrap;
-    gap: 5%;
+    gap: 3em;
     justify-content: center;
 }
 
 /*Current Temp Styles*/
 .main-card{
-    padding: 20px;
-    z-index: 10;
+    padding: 1.5em;
+
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.9px);
+    -webkit-backdrop-filter: blur(8.9px);
 }
 
 #location-name, #country-name, #current-time{
-    padding-left: 15px;
     margin: 0;
+}
+
+#current-stats{
+    flex: 1;
 }
 
 .top-sec{
     align-items: center;
+    flex: 1;
+}
+
+#weather-info{
+    justify-content: center;
 }
 
 #current-temp{
     margin: 0;
     font-size: 4em;
-    position: relative;
 }
 
 #condition-text{
-    position: absolute;
-    margin-top: 100px;
-    margin-left: 150px;
+    margin-top: -15px;
 }
 
 #current-icon{
@@ -146,8 +157,18 @@ img{
 }
 
 /*Extra Details Styles*/
+#extra-info{
+    padding: 0.25em 1em;
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.9px);
+    -webkit-backdrop-filter: blur(8.9px);
+}
+
 @media only screen and (max-width: 660px) {
     #extra-info{
+        padding: 1em 2em;
         display: flex;
         flex-direction: column;
     }

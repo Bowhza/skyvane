@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"/>
         <title>Skyvane</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
@@ -30,9 +30,10 @@
                     <div class="flex-col current-stats">
                         <div class="top-sec flex">
                             <img id="current-icon" src="">
-                            <h2 id="current-temp">
+                            <div id="weather-info" class="flex-col">
+                                <h2 id="current-temp"></h2>
                                 <h2 id="condition-text"></h2>
-                            </h2>
+                            </div>
                         </div>
                         <div>
                             <h2 id="current-time"></h2>

@@ -47,7 +47,6 @@ async function fetchData(APIKey, Location)
         });
         let result = await data.json();
         let icon = await fetchIcon(result.current.condition.code);
-        
 
         //Checks if its daytime or nightime and sets the icon accordingly.
         if(result.current.is_day == 1){

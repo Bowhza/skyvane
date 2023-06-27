@@ -45,13 +45,6 @@ img{
     flex-direction: column;
 }
 
-.morph{
-    border-radius: 15px;
-    background: #f2f2f2;
-    box-shadow:  7px 7px 14px #c6c6c6,
-                 -7px -7px 14px #ffffff;
-}
-
 /*Search Bar*/
 #title{
     font-size: 3em;
